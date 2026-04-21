@@ -1,0 +1,22 @@
+{
+  "_comment": "Cenário 3: modo per_image — 1 linha por imagem para classificação binária.",
+
+  "settings": {
+    "mode":             "per_image",
+    "workers":          4,
+    "output_dir":       "./outputs/test_per_image",
+    "tag_source":       true,
+    "checkpoint_every": 30,
+    "resume":           false
+  },
+
+  "sss_sonar": {
+    "binary_classifier": {
+      "statistical": ["basic_stats", "histogram"],
+      "texture":     ["glcm"],
+      "edges":       ["gradient"],
+      "frequency":   ["frequency", "haar_wavelet"],
+      "spatial":     ["spatial_grid"]
+    }
+  }
+}

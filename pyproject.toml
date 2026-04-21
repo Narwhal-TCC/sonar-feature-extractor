@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name            = "sonar-feature-extractor"
+version         = "3.1.0"
+description     = "Pipeline de extração de features para imagens de Sonar (SSS, FLS...)"
+readme          = "README.md"
+requires-python = ">=3.10"
+license         = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "opencv-python>=4.7",
+    "scikit-image>=0.21",
+    "scipy>=1.10",
+]
+
+[project.scripts]
+sonar-feature-extractor = "sonar_feature_extractor.cli:main"
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["sonar_feature_extractor*"]

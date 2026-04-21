@@ -1,0 +1,18 @@
+{
+  "_comment": "Cenário 2: smoke test com as 4 features mais importantes.",
+
+  "settings": {
+    "mode":             "per_object",
+    "workers":          1,
+    "output_dir":       "./outputs/test_minimal",
+    "tag_source":       true,
+    "checkpoint_every": 0,
+    "resume":           false
+  },
+
+  "sss_sonar": {
+    "smoke_test": {
+      "top_features": ["basic_stats", "glcm", "gradient", "roi"]
+    }
+  }
+}

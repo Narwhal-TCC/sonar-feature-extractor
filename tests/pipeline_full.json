@@ -1,0 +1,29 @@
+{
+  "_comment": "Cenário 1: pipeline completo com dois models, modo per_object.",
+
+  "settings": {
+    "mode":             "per_object",
+    "workers":          4,
+    "output_dir":       "./outputs/test_full",
+    "tag_source":       true,
+    "checkpoint_every": 30,
+    "resume":           false
+  },
+
+  "sss_sonar": {
+    "_comment": "Side-Scan Sonar — classes 0=NOMBO, 1=MILCO",
+
+    "model_tree": {
+      "statistical": ["basic_stats", "histogram"],
+      "texture":     ["glcm", "haar_wavelet"],
+      "edges":       ["gradient"],
+      "spatial":     ["spatial_grid"],
+      "roi":         ["roi"]
+    },
+
+    "model_regression": {
+      "core":      ["basic_stats", "glcm", "gradient"],
+      "frequency": ["frequency", "haar_wavelet"]
+    }
+  }
+}

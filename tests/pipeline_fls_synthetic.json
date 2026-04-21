@@ -1,0 +1,32 @@
+{
+  "_comment": "Pipeline de teste para FLS Dataset 1 — Ściegienka & Blachnik (2024). Fonte: https://www.kaggle.com/datasets/piotres/front-looking-sonar-uxo",
+
+  "settings": {
+    "mode":             "per_image",
+    "workers":          4,
+    "output_dir":       "./outputs/test_fls_synthetic",
+    "tag_source":       true,
+    "checkpoint_every": 30,
+    "resume":           true
+  },
+
+  "fls_uxo_synthetic": {
+    "_comment": "FLS sintético — sensor_type registrado em sensors/fls_sciegienka.py",
+
+    "model_classification": {
+      "_comment": "Todas as features para classificação UXO/nonUXO",
+      "statistical":  ["basic_stats", "histogram"],
+      "texture":      ["glcm", "haar_wavelet"],
+      "edges":        ["gradient"],
+      "frequency":    ["frequency"],
+      "spatial":      ["spatial_grid"],
+      "fls_metadata": ["fls_filename_meta"]
+    },
+
+    "model_minimal": {
+      "_comment": "Subconjunto mínimo para smoke test",
+      "core":         ["basic_stats", "glcm"],
+      "fls_metadata": ["fls_filename_meta"]
+    }
+  }
+}

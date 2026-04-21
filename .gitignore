@@ -1,0 +1,114 @@
+# ─────────────────────────────────────────────────────────────────
+# sss-feature-extractor — .gitignore
+# ─────────────────────────────────────────────────────────────────
+
+# ── Python ────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# ── Build / instalação do pacote ──────────────────────────────────
+# Gerados por pip install -e . ou python -m build
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+MANIFEST
+
+# Gerado pelo setuptools em modo editable (PEP 660)
+__editable__.*
+direct_url.json
+
+# ── Ambientes virtuais ────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.env/
+
+# ── Outputs do pipeline (dados gerados, não código) ───────────────
+# Nunca versionar CSVs de features — são grandes e reproduzíveis
+outputs/
+*.csv
+
+# Checkpoints de processamento (retomada automática)
+*.ckpt.json
+
+# Config salva automaticamente (--save-config)
+*.config.json
+
+# ── Dados de sonar (nunca versionar imagens e labels brutos) ──────
+# As imagens e labels ficam no servidor/NAS, não no repositório
+data/
+dataset/
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+*.png
+*.PNG
+*.txt
+
+# ── Notebooks e artefatos de exploração ──────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── IDEs e editores ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.spyderproject
+.spyproject
+
+# ── macOS ─────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── Windows ───────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Logs e temporários ────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ── Pytest / cobertura de testes ──────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+.tox/
+
+# ── Mypy / linters ───────────────────────────────────────────────
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# ── Variáveis de ambiente (NUNCA versionar) ───────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Claude Code (configs e memórias do agente) ───────────────────
+.claude/
+
+# ── Dados FLS ARIS (PGM originais, YAMLs de dataset, polar PNGs) ─
+*.pgm
+*.yaml
+polar/
+
+# ── Arquivos de lista de pastas gerados em testes ────────────────
+tests/pastas.txt
